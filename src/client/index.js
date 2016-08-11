@@ -11,3 +11,12 @@ if (IS_HOT_DEVELOPMENT) {
   // Accept changes to this file for hot reloading.
   module.hot.accept('./index.js')
 }
+
+services.subscribe(() =>{}, ::console.log, ::console.log)
+
+stores.subscribe((appState) => {
+  render(
+    <App {...appState} />,
+    container
+  )
+}, ::console.log, ::console.log)

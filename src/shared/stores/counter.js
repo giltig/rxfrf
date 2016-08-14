@@ -1,8 +1,8 @@
 import {Observable} from '@reactivex/rxjs'
-import {getPayload} from 'shared/dispatcher'
+import getPayload from 'shared/dispatcher'
 import {Actions, dispatch} from 'shared/actions'
 import {add} from 'ramda'
-import combineLatestObj from 'utils/combineLatestObj'
+import combineLatestObj from 'shared/utils/combineLatestObj'
 
 /* ========================== state ========================================= */
 

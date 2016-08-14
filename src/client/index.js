@@ -12,11 +12,11 @@ if (IS_HOT_DEVELOPMENT) {
   module.hot.accept('./index.js')
 }
 
-services.subscribe(() =>{}, ::console.log, ::console.log)
+// services.subscribe(() =>{}, ::console.log, ::console.log)
 
 stores.subscribe((appState) => {
   render(
     <App {...appState} />,
     container
   )
-}, ::console.log, ::console.log)
+})

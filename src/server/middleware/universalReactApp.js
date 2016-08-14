@@ -2,6 +2,8 @@ import React from 'react'
 import render from '../htmlPage/render'
 import { DISABLE_SSR } from '../config'
 import { IS_DEVELOPMENT } from '../../shared/config'
+import stores from 'shared/stores'
+import App from 'shared/components/App'
 
 /**
  * An express middleware that is capabable of doing React server side rendering.
@@ -20,14 +22,13 @@ function universalReactAppMiddleware (request, response) {
 
   // Our way of server side rendering - TBD
   stores.first().subscribe((appState) => {
-      // Override the route from the request
-      appState.route.path = request.path
-      appState.route.query = request.query
+    // Override the route from the request
+    // appState.route.path = request.path
+    // appState.route.query = request.query
 
-      const html = render({rootElement: <App {...appState} />, initialState: appState})
-      response.status(200).send(html)
-    }, ::console.log)
-  }
+    const html = render({rootElement: <App /* {...appState}*/ />, initialState: appState})
+    response.status(200).send(html)
+  }/*, ::console.log*/)
 }
 
 export default universalReactAppMiddleware

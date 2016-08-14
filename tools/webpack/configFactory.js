@@ -151,6 +151,8 @@ function webpackConfigFactory ({ target, mode }, { json }) {
       libraryTarget: ifServer('commonjs2', 'var'),
     },
     resolve: {
+      // Why did I put it here?
+      modules: [path.resolve('./src'), path.resolve('./node_modules')],
       // These extensions are tried when resolving a file.
       extensions: [
         '.js',

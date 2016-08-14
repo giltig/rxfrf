@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import Counter from '../Counter'
 
 import 'normalize.css/normalize.css'
 import './globals.css'
@@ -8,7 +9,7 @@ import logo from './logo.png'
 const websiteDescription =
   'Base project for Functional Reactive Flux '
 
-function App ({ route }) {
+function App (appState) {
   return (
     <div style={{ padding: '10px' }}>
       {/*
@@ -17,35 +18,19 @@ function App ({ route }) {
               */}
       <Helmet
         htmlAttributes={{ lang: 'en' }}
-        titleTemplate="React Universally - %s"
-        defaultTitle="React Universally"
+        titleTemplate="Functional Reactive Flux - %s"
+        defaultTitle="Functional Reactive Flux"
         meta={[  { name: 'description', content: websiteDescription },]}
         script={[  { src: 'https://cdn.polyfill.io/v2/polyfill.min.js', type: 'text/javascript' },]} />
       <div style={{ textAlign: 'center' }}>
-        <img src={logo} alt="Logo" style={{ width: '100px' }} />
-        <h1>React, Universally</h1>
+        <h1>Functional Reactive Flux</h1>
         <strong>{websiteDescription}</strong>
       </div>
       <div>
-        <ul>
-          <li>
-            <Link to="/"> Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about"> About
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div>
-        {children}
+        <Counter count={0} />
       </div>
     </div>
   )
-}
-App.propTypes = {
-  children: PropTypes.node,
 }
 
 export default App

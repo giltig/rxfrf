@@ -1,4 +1,4 @@
-import {Observable} from '@reactivex/rxjs''
+import {Observable} from '@reactivex/rxjs'
 
 export default Observable.combineLatestObj =
   (obsObj) => {

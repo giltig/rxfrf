@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Counter =
-  ({count}) =>
+  ({count, increaseCount, decreaseCount}) =>
     <div>
-      <button>+</button>
+      <button onClick={increaseCount}>+</button>
       <div>{count}</div>
-      <button>-</button>
+      <button onClick={decreaseCount}>-</button>
     </div>
 
 export default Counter;

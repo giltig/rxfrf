@@ -24,9 +24,10 @@ function buildFilterFunction (args) {
 
   return (message) => {
     // If filter args have actions to filter by them
-    return
+    return (
       Object.keys(args)
         .some(key => args[key] === message.type)
+    )
   }
 }
 

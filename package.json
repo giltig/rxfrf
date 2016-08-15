@@ -50,7 +50,8 @@
     "react-hot-loader": "3.0.0-beta.2",
     "route-parser": "0.0.5",
     "serialize-javascript": "1.3.0",
-    "source-map-support": "0.4.2"
+    "source-map-support": "0.4.2",
+    "url-parse": "^1.1.1"
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.4.0",
@@ -58,9 +59,11 @@
     "babel-core": "6.13.2",
     "babel-loader": "6.2.4",
     "babel-plugin-transform-class-properties": "6.11.5",
-    "babel-plugin-transform-object-rest-spread": "6.8.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.9.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-preset-es2015": "6.13.2",
     "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
     "chokidar": "1.6.0",
     "css-loader": "0.23.1",
     "dotenv": "2.0.0",

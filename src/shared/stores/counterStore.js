@@ -14,7 +14,7 @@ const decrease =
   getPayload(Actions.COUNTER_DECREASED)
     .mapTo(-1)
 
-export const counter =
+export const count =
   Observable
     .merge(increase, decrease)
     .scan(add)
@@ -36,4 +36,4 @@ export const decreaseCount =
 
 export default
   Observable
-    .combineLatestObj({counter, increaseCount, decreaseCount})
+    .combineLatestObj({count, increaseCount, decreaseCount})

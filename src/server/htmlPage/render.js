@@ -38,7 +38,7 @@ const scripts = scriptTags(clientAssets.scripts)
 function render (rootReactElement, initialState) {
   const reactRenderString = rootReactElement
     ? renderToString(rootReactElement)
-    : null
+    : ''
 
   const helmet = rootReactElement
     // We run 'react-helmet' after our renderToString call so that we can fish
@@ -48,7 +48,7 @@ function render (rootReactElement, initialState) {
     // @see https://github.com/nfl/react-helmet
     ? Helmet.rewind()
     // There was no react element, so we just us an empty helmet.
-    : null
+    : ''
 
   return `<!DOCTYPE html>
     <html ${helmet && helmet.htmlAttributes.toString()}>

@@ -16,19 +16,22 @@ function universalReactAppMiddleware (request, response) {
     // SSR is disabled so we will just return an empty html page and will
     // rely on the client to populate the initial react application state.
     const html = render()
+    
     response.status(200).send(html)
     return
   }
 
   // Our way of server side rendering - TBD
-  stores.first().subscribe((appState) => {
-    // Override the route from the request
-    // appState.route.path = request.path
-    // appState.route.query = request.query
+  stores
+    .debounceTime(16)
+    .first()
+    .subscribe((appState) => {
+      // Override the route from the request
+      appState.route = request.originalUrl
 
-    const html = render({rootElement: <App /* {...appState}*/ />, initialState: appState})
-    response.status(200).send(html)
-  }/*, ::console.log*/)
+      const html = render(<App {...appState} />, appState)
+      response.status(200).send(html)
+    })
 }
 
 export default universalReactAppMiddleware

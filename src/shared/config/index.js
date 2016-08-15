@@ -17,3 +17,6 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 export const IS_DEVELOPMENT = isDevelopment
 
 export const IS_HOT_DEVELOPMENT = isDevelopment && module.hot
+
+const disableSSR = process.env.DISABLE_SSR
+export const DISABLE_SSR = disableSSR
